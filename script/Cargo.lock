@@ -656,22 +656,7 @@ checksum = "a3c196a77437e7cc2fb515ce413a6401291578b5afc8ecb29a3c7ab957f05941"
 dependencies = [
  "ff 0.12.1",
  "group 0.12.1",
- "pairing 0.22.0",
- "rand_core",
- "subtle",
-]
-
-[[package]]
-name = "bls12_381"
-version = "0.8.0"
-dependencies = [
- "crypto-bigint",
- "ff 0.13.0",
- "group 0.13.0",
- "num-bigint 0.4.6",
- "num-integer",
- "pairing 0.23.0",
- "rand",
+ "pairing",
  "rand_core",
  "subtle",
 ]
@@ -700,9 +685,9 @@ checksum = "c3ac9f8b63eca6fd385229b3675f6cc0dc5c8a5c8a54a59d4f52ffd670d87b0c"
 
 [[package]]
 name = "bytemuck"
-version = "1.16.1"
+version = "1.16.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b236fc92302c97ed75b38da1f4917b5cdda4984745740f153a5d3059e48d725e"
+checksum = "102087e286b4677862ea56cf8fc58bb2cdfa8725c40ffb80fe3a008eb7f2fc83"
 
 [[package]]
 name = "byteorder"
@@ -2421,7 +2406,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a575df5f985fe1cd5b2b05664ff6accfc46559032b954529fd225a2168d27b0f"
 dependencies = [
  "bitvec",
- "bls12_381 0.7.1",
+ "bls12_381",
  "ff 0.12.1",
  "group 0.12.1",
  "rand_core",
@@ -3204,15 +3189,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "135590d8bdba2b31346f9cd1fb2a912329f5135e832a4f422942eb6ead8b6b3b"
 dependencies = [
  "group 0.12.1",
-]
-
-[[package]]
-name = "pairing"
-version = "0.23.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "81fec4625e73cf41ef4bb6846cafa6d44736525f442ba45e407c4a000a13996f"
-dependencies = [
- "group 0.13.0",
 ]
 
 [[package]]
@@ -4575,12 +4551,14 @@ dependencies = [
 [[package]]
 name = "sp1-lib"
 version = "1.1.1"
-source = "git+https://github.com/succinctlabs/sp1.git?branch=experimental#7b11008d05023cadb9def590e50344cd1bbea303"
+source = "git+https://github.com/succinctlabs/sp1.git?branch=experimental#4ae157b5964a7b3816c448544c5cc5a8fe492187"
 dependencies = [
  "anyhow",
  "bincode",
  "cfg-if",
+ "hex",
  "serde",
+ "snowbridge-amcl",
 ]
 
 [[package]]
@@ -4813,7 +4791,6 @@ dependencies = [
 name = "sp1-revm-kzg-profile"
 version = "0.1.0"
 dependencies = [
- "bls12_381 0.8.0",
  "hex",
  "sha2",
  "sp1-helper",
@@ -4936,6 +4913,7 @@ dependencies = [
 name = "substrate-bn"
 version = "0.6.0"
 dependencies = [
+ "bytemuck",
  "byteorder",
  "cfg-if",
  "crunchy",
@@ -6000,7 +5978,7 @@ dependencies = [
  "ark-std 0.4.0",
  "bitvec",
  "blake2",
- "bls12_381 0.7.1",
+ "bls12_381",
  "byteorder",
  "cfg-if",
  "group 0.12.1",

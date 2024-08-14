@@ -11,7 +11,6 @@ alloy-sol-types = "0.7.2"
 sp1-zkvm = { path = "../../sp1/zkvm/entrypoint" }
 sp1-derive = { path = "../../sp1/derive" }
 sp1-lib = { path = "../../sp1/zkvm/lib" }
-bls12_381 = { path = "../../bls12_381", features = ["groups", "pairings"] }
 substrate-bn = { path = "../../bn" }
 # zkvm-pairings = { path = "../../zkvm-pairings" }
 
